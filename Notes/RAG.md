@@ -9,4 +9,13 @@
 
 7. we now start the process of making a standalone question using the users input and then finding appropriate chunks for it in the vector store. the only purpose for the standalone question is to get relevant chunks, the original input is passed onto the LLM 
 8. the standalone question si made using a PromptTemplate that gives instructions to the llms on what output they need to produce 
-9. 
+
+
+## Additional info topic wise 
+
+# pipe() function 
+The .pipe() API looks clean but is deceptively too strict: every stage must line up input/output types.
+asRetriever() breaks the illusion because it outputs Document[] — which almost never matches the next component without a manual formatter step.
+
+That’s why advanced LangChain devs almost always reach for RunnableSequence.from([...]) when doing RAG. It lets you remap keys and shape inputs instead of being stuck with 1-to-1 pipes.
+
