@@ -6,7 +6,9 @@
     "@langchain/google-genai": "^0.2.16",
     "@langchain/openai": "^0.6.4",
     "@supabase/supabase-js": "^2.55.0",
+    "@tailwindcss/vite": "^4.1.12",
     "dotenv": "^16.4.5",
-    "langchain": "^0.3.30"
+    "langchain": "^0.3.30",
+    "tailwindcss": "^4.1.12"
   }
 }
