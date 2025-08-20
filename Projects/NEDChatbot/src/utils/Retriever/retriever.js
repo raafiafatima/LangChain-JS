@@ -24,5 +24,4 @@ const vectorStore = new SupabaseVectorStore(embeddings, {
 });
 
 const retriver = vectorStore.asRetriever() // this is a method that allows us to easily search and retrive relevant data chunks from the DB, without having to manually do anything, similar to the .fromDocuments() method that does all converting on its own 
-
 export default retriver

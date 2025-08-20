@@ -5,9 +5,9 @@ export const ChatMessage = ({ message }) => {
       className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} animate-fadeIn`}
     >
       <div
-        className={`max-w-[80%] p-3 rounded-lg ${message.isUser ? 'bg-[#e63946] text-white rounded-tr-none' : 'bg-[#e8e1d9] text-black rounded-tl-none'}`}
+        className={`max-w-[80%] p-3 rounded-lg ${message.isUser ? 'bg-[#e64a57] text-white rounded-tr-none' : 'bg-[#e8e1d9] text-black rounded-tl-none'}`}
       >
-        <p>{message.text}</p>
+        <p>{message.question}</p>
       </div>
     </div>
   )

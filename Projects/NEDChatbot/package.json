@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@langchain/core": "^0.3.72",
     "@tailwindcss/vite": "^4.1.12",
+    "langchain": "^0.3.31",
     "lucide-react": "^0.540.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
