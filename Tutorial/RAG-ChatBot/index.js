@@ -78,6 +78,8 @@ const response = await chain.invoke({
 
 console.log(response); // returns the final 4 chunks of relevant data needed from the vector store
 
+
+
 async function progressConversation() {
   const userInput = document.getElementById("user-input");
   const chatbotConversation = document.getElementById(
