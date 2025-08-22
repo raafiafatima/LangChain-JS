@@ -10,11 +10,6 @@ import {
   RunnableSequence,
 } from "@langchain/core/runnables";
 
-// const form = document.getElementById("form")
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault()
-//     progressConversation()
-// })
 
 const googleAPIkey = process.env.GOOGLE_API_KEY;
 const llm = new ChatGoogleGenerativeAI({
@@ -77,32 +72,3 @@ const response = await chain.invoke({
 // this gives us the standalone question - a simple question that only contains the thing that the user needs
 
 console.log(response); // returns the final 4 chunks of relevant data needed from the vector store
-
-
-
-async function progressConversation() {
-  const userInput = document.getElementById("user-input");
-  const chatbotConversation = document.getElementById(
-    "chatbot-conversation-container"
-  );
-  const question = userInput.value;
-  userInput.value = "";
-
-  // add human message
-  const newHumanSpeechBubble = document.createElement("div");
-  newHumanSpeechBubble.classList.add("speech", "speech-human");
-  chatbotConversation.appendChild(newHumanSpeechBubble);
-  newHumanSpeechBubble.textContent = question;
-  chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
-  const response = await chain.invoke({
-  question: question
-    
-});
-
-  // add AI message
-  const newAiSpeechBubble = document.createElement("div");
-  newAiSpeechBubble.classList.add("speech", "speech-ai");
-  chatbotConversation.appendChild(newAiSpeechBubble);
-  newAiSpeechBubble.textContent = response;
-  chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
-}
