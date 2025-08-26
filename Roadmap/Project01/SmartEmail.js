@@ -13,18 +13,26 @@ const llm = new ChatGoogleGenerativeAI({
   temperature: 0.7,
 });
 
-const systemTemplate = `You are an AI assistant that generates emails based on the subjectline.
-Keep the tone of the email neutral and in-coordance with the email subject. 
-Also use the provided context to write in an email where the user doesnot need to add anything
-subject : {subject}
-context : {context}`;
+const systemTemplate = `You are an AI assistant that generates professional emails.
+
+Subject: {subject}
+Recipient: {recipient}
+Sender: {sender}
+Tone: {tone}
+Context : {context}
+
+Write a polite, natural-sounding email in accordance with these details.
+Return only the subject and body, no explanations.`;
 const systemPrompt = PromptTemplate.fromTemplate(systemTemplate);
 
 const chain = systemPrompt.pipe(llm).pipe(new StringOutputParser());
 
 const resp = await chain.invoke({
-  subject: "Sick Leave",
-  context : 'name is raafia, leaving on Monday, will be back by Thursday. In the mean time Ayesha will look after my work.'
+  subject: "Unable to meet company expetations",
+  context : 'pushed .env file over gihub, did not use any secure coding practices and also blasted our repo', 
+  tone : 'angry', 
+  recipient : 'Mr Ahmed Ali', 
+  sender: 'Raafia'
 });
 
 console.log(resp);
